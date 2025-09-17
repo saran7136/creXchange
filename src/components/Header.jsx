@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+    setIsMenuOpen(false) // Close mobile menu after clicking
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -12,10 +23,10 @@ function Header() {
           </div>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <a href="#features" className="nav-link">Features</a>
-            <a href="#how-it-works" className="nav-link">How it Works</a>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <button onClick={() => scrollToSection('features')} className="nav-link">Features</button>
+            <button onClick={() => scrollToSection('how-it-works')} className="nav-link">How it Works</button>
+            <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
+            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
           </nav>
 
           <div className="header-actions">
