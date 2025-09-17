@@ -32,6 +32,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 .container {
