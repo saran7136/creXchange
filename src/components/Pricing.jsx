@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Pricing() {
+function Pricing({ onGetStarted }) {
   return (
     <section id="pricing" className="pricing">
       <div className="container">
@@ -26,7 +26,7 @@ function Pricing() {
               <div className="feature">✓ 24/7 customer support</div>
               <div className="feature">✓ Bank-grade security</div>
             </div>
-            <button className="btn btn-primary btn-large">Join Free Beta</button>
+            <button onClick={onGetStarted} className="btn btn-primary btn-large">Join Free Beta</button>
             <p className="pricing-note">No credit card required • Cancel anytime</p>
           </div>
         </div>

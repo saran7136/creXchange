@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Header() {
+function Header({ onGetStarted, onSignIn }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId) => {
@@ -31,8 +31,8 @@ function Header() {
           </nav>
 
           <div className="header-actions">
-            <button className="btn btn-outline">Sign In</button>
-            <button className="btn btn-primary">Get Started</button>
+            <button onClick={onSignIn} className="btn btn-outline">Sign In</button>
+            <button onClick={onGetStarted} className="btn btn-primary">Get Started</button>
           </div>
 
           <button 

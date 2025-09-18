@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Hero() {
+function Hero({ onGetStarted }) {
   return (
     <section className="hero">
       <div className="container">
@@ -15,7 +15,7 @@ function Hero() {
               Get access to premium benefits without owning every card.
             </p>
             <div className="hero-actions">
-              <button className="btn btn-primary btn-large">
+              <button onClick={onGetStarted} className="btn btn-primary btn-large">
                 Start Sharing
               </button>
               <button className="btn btn-outline btn-large">
