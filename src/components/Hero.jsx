@@ -38,38 +38,45 @@ function Hero() {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="card-stack">
-              <div className="credit-card card-1">
-                <div className="card-header">
-                  <span className="card-type">HDFC Regalia</span>
-                  <div className="card-chip"></div>
-                </div>
-                <div className="card-number">**** **** **** 4321</div>
-                <div className="card-footer">
-                  <span>JOHN DOE</span>
-                  <span>12/26</span>
-                </div>
-              </div>
-              <div className="credit-card card-2">
-                <div className="card-header">
-                  <span className="card-type">SBI Elite</span>
-                  <div className="card-chip"></div>
-                </div>
-                <div className="card-number">**** **** **** 8765</div>
-                <div className="card-footer">
-                  <span>JANE SMITH</span>
-                  <span>09/25</span>
-                </div>
-              </div>
-              <div className="credit-card card-3">
-                <div className="card-header">
-                  <span className="card-type">ICICI Platinum</span>
-                  <div className="card-chip"></div>
-                </div>
-                <div className="card-number">**** **** **** 1234</div>
-                <div className="card-footer">
-                  <span>ALEX KUMAR</span>
-                  <span>03/27</span>
+            <div className="demo-mockup">
+              <div className="phone-mockup">
+                <div className="phone-screen">
+                  <div className="demo-step active">
+                    <div className="step-header">
+                      <span className="step-icon">🔍</span>
+                      <span className="step-title">Request Offer</span>
+                    </div>
+                    <div className="demo-content">
+                      <div className="offer-card">
+                        <span>Amazon 20% off</span>
+                        <span>Need HDFC Infinia</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="demo-step">
+                    <div className="step-header">
+                      <span className="step-icon">🤝</span>
+                      <span className="step-title">Get Matched</span>
+                    </div>
+                    <div className="demo-content">
+                      <div className="match-card">
+                        <span>Matched with Priya</span>
+                        <span>HDFC Infinia holder</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="demo-step">
+                    <div className="step-header">
+                      <span className="step-icon">💳</span>
+                      <span className="step-title">Virtual Card</span>
+                    </div>
+                    <div className="demo-content">
+                      <div className="virtual-card">
+                        <span>**** 1234</span>
+                        <span>Valid: 24hrs</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

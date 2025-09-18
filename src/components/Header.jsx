@@ -25,8 +25,9 @@ function Header() {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <button onClick={() => scrollToSection('features')} className="nav-link">Features</button>
             <button onClick={() => scrollToSection('how-it-works')} className="nav-link">How it Works</button>
-            <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
+            <button onClick={() => scrollToSection('for-users')} className="nav-link">For Users</button>
+            <button onClick={() => scrollToSection('for-banks')} className="nav-link">For Banks</button>
+            <button onClick={() => scrollToSection('pricing')} className="nav-link">Pricing</button>
           </nav>
 
           <div className="header-actions">

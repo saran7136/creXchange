@@ -53,6 +53,7 @@ function HowItWorks() {
         <div className="cta-section">
           <h3 className="cta-title">Ready to start saving?</h3>
           <button className="btn btn-primary btn-large">Join creXchange Today</button>
+          <p className="cta-subtitle">Join thousands of users already saving and earning</p>
         </div>
       </div>
     </section>

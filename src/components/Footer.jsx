@@ -18,6 +18,20 @@ function Footer() {
               <a href="#" className="social-link">LinkedIn</a>
               <a href="#" className="social-link">Instagram</a>
             </div>
+            
+            <div className="app-download">
+              <h4 className="footer-title">Download Our App</h4>
+              <div className="app-badges">
+                <div className="app-badge">
+                  <span>📱 Google Play</span>
+                  <small>Coming Soon</small>
+                </div>
+                <div className="app-badge">
+                  <span>🍎 App Store</span>
+                  <small>Coming Soon</small>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="footer-section">
@@ -48,6 +62,19 @@ function Footer() {
               <li><a href="#privacy">Privacy Policy</a></li>
               <li><a href="#terms">Terms of Service</a></li>
             </ul>
+          </div>
+          
+          <div className="footer-section">
+            <h4 className="footer-title">Stay Updated</h4>
+            <p className="newsletter-text">Get early access and updates</p>
+            <div className="newsletter-signup">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="newsletter-input"
+              />
+              <button className="btn btn-primary newsletter-btn">Subscribe</button>
+            </div>
           </div>
         </div>
 
