@@ -1,5 +1,4 @@
 import React from 'react'
-import CreditCardShowcase from './CreditCardShowcase'
 
 function Hero({ onGetStarted }) {
   return (
@@ -39,7 +38,82 @@ function Hero({ onGetStarted }) {
             </div>
           </div>
           <div className="hero-visual">
-            <CreditCardShowcase />
+            <div className="credit-cards-container">
+              <div className="credit-card-carousel">
+                <div className="credit-card active" data-bank="hdfc">
+                  <div className="card-content">
+                    <div className="card-header">
+                      <span className="bank-name">HDFC</span>
+                      <div className="card-chip"></div>
+                    </div>
+                    <div className="card-number">**** **** **** 1234</div>
+                    <div className="card-footer">
+                      <div className="card-holder">INFINIA</div>
+                      <div className="card-type">PREMIUM</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="credit-card" data-bank="icici">
+                  <div className="card-content">
+                    <div className="card-header">
+                      <span className="bank-name">ICICI</span>
+                      <div className="card-chip"></div>
+                    </div>
+                    <div className="card-number">**** **** **** 5678</div>
+                    <div className="card-footer">
+                      <div className="card-holder">SAPPHIRO</div>
+                      <div className="card-type">PREMIUM</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="credit-card" data-bank="axis">
+                  <div className="card-content">
+                    <div className="card-header">
+                      <span className="bank-name">AXIS</span>
+                      <div className="card-chip"></div>
+                    </div>
+                    <div className="card-number">**** **** **** 9012</div>
+                    <div className="card-footer">
+                      <div className="card-holder">MAGNUS</div>
+                      <div className="card-type">PREMIUM</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="credit-card" data-bank="sbi">
+                  <div className="card-content">
+                    <div className="card-header">
+                      <span className="bank-name">SBI</span>
+                      <div className="card-chip"></div>
+                    </div>
+                    <div className="card-number">**** **** **** 3456</div>
+                    <div className="card-footer">
+                      <div className="card-holder">ELITE</div>
+                      <div className="card-type">PREMIUM</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="credit-card" data-bank="amex">
+                  <div className="card-content">
+                    <div className="card-header">
+                      <span className="bank-name">AMEX</span>
+                      <div className="card-chip"></div>
+                    </div>
+                    <div className="card-number">**** ****** *7890</div>
+                    <div className="card-footer">
+                      <div className="card-holder">PLATINUM</div>
+                      <div className="card-type">PREMIUM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="card-indicators">
+                <span className="indicator active" data-card="0"></span>
+                <span className="indicator" data-card="1"></span>
+                <span className="indicator" data-card="2"></span>
+                <span className="indicator" data-card="3"></span>
+                <span className="indicator" data-card="4"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
