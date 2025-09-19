@@ -1,6 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Hero({ onGetStarted }) {
+  const [currentCard, setCurrentCard] = useState(0)
+
+  const cards = [
+    {
+      bank: 'HDFC',
+      type: 'INFINIA',
+      number: '**** **** **** 1234',
+      gradient: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
+      class: 'hdfc-card'
+    },
+    {
+      bank: 'ICICI',
+      type: 'SAPPHIRO',
+      number: '**** **** **** 5678',
+      gradient: 'linear-gradient(135deg, #4834d4 0%, #686de0 100%)',
+      class: 'icici-card'
+    },
+    {
+      bank: 'AXIS',
+      type: 'MAGNUS',
+      number: '**** **** **** 9012',
+      gradient: 'linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%)',
+      class: 'axis-card'
+    },
+    {
+      bank: 'SBI',
+      type: 'ELITE',
+      number: '**** **** **** 3456',
+      gradient: 'linear-gradient(135deg, #3742fa 0%, #2f3542 100%)',
+      class: 'sbi-card'
+    },
+    {
+      bank: 'AMEX',
+      type: 'PLATINUM',
+      number: '**** ****** *7890',
+      gradient: 'linear-gradient(135deg, #2ed573 0%, #1e90ff 100%)',
+      class: 'amex-card'
+    }
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % cards.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [cards.length])
+
+  const handleIndicatorClick = (index) => {
+    setCurrentCard(index)
+  }
+
   return (
     <section className="hero">
       <div className="container">
@@ -38,80 +90,34 @@ function Hero({ onGetStarted }) {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="credit-cards-container">
-              <div className="credit-card-carousel">
-                <div className="credit-card active" data-bank="hdfc">
-                  <div className="card-content">
+            <div className="credit-cards-showcase">
+              <div className="cards-container">
+                {cards.map((card, index) => (
+                  <div
+                    key={index}
+                    className={`credit-card ${card.class} ${index === currentCard ? 'active' : ''}`}
+                    style={{ background: card.gradient }}
+                  >
                     <div className="card-header">
-                      <span className="bank-name">HDFC</span>
-                      <div className="card-chip"></div>
+                      <span className="bank-logo">{card.bank}</span>
+                      <span className="card-type">{card.type}</span>
                     </div>
-                    <div className="card-number">**** **** **** 1234</div>
+                    <div className="card-number">{card.number}</div>
                     <div className="card-footer">
-                      <div className="card-holder">INFINIA</div>
-                      <div className="card-type">PREMIUM</div>
+                      <div className="card-holder">PREMIUM</div>
+                      <div className="card-network">💳</div>
                     </div>
                   </div>
-                </div>
-                <div className="credit-card" data-bank="icici">
-                  <div className="card-content">
-                    <div className="card-header">
-                      <span className="bank-name">ICICI</span>
-                      <div className="card-chip"></div>
-                    </div>
-                    <div className="card-number">**** **** **** 5678</div>
-                    <div className="card-footer">
-                      <div className="card-holder">SAPPHIRO</div>
-                      <div className="card-type">PREMIUM</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="credit-card" data-bank="axis">
-                  <div className="card-content">
-                    <div className="card-header">
-                      <span className="bank-name">AXIS</span>
-                      <div className="card-chip"></div>
-                    </div>
-                    <div className="card-number">**** **** **** 9012</div>
-                    <div className="card-footer">
-                      <div className="card-holder">MAGNUS</div>
-                      <div className="card-type">PREMIUM</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="credit-card" data-bank="sbi">
-                  <div className="card-content">
-                    <div className="card-header">
-                      <span className="bank-name">SBI</span>
-                      <div className="card-chip"></div>
-                    </div>
-                    <div className="card-number">**** **** **** 3456</div>
-                    <div className="card-footer">
-                      <div className="card-holder">ELITE</div>
-                      <div className="card-type">PREMIUM</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="credit-card" data-bank="amex">
-                  <div className="card-content">
-                    <div className="card-header">
-                      <span className="bank-name">AMEX</span>
-                      <div className="card-chip"></div>
-                    </div>
-                    <div className="card-number">**** ****** *7890</div>
-                    <div className="card-footer">
-                      <div className="card-holder">PLATINUM</div>
-                      <div className="card-type">PREMIUM</div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="card-indicators">
-                <span className="indicator active" data-card="0"></span>
-                <span className="indicator" data-card="1"></span>
-                <span className="indicator" data-card="2"></span>
-                <span className="indicator" data-card="3"></span>
-                <span className="indicator" data-card="4"></span>
+                {cards.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`indicator ${index === currentCard ? 'active' : ''}`}
+                    onClick={() => handleIndicatorClick(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>
