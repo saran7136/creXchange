@@ -151,87 +151,151 @@
   align-items: center;
 }
 
-.demo-mockup {
+.credit-cards-showcase {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-mockup {
-  width: 280px;
-  height: 500px;
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: var(--shadow-xl);
-  position: relative;
-}
-
-.phone-screen {
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
-.demo-step {
-  padding: 16px;
-  border-radius: 12px;
-  border: 2px solid #e5e7eb;
-  transition: var(--transition);
+.cards-container {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  perspective: 1000px;
 }
 
-.demo-step.active {
-  border-color: var(--primary-color);
-  background: #f8fafc;
+.credit-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 220px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: rotateY(-15deg) rotateX(5deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 1;
 }
 
-.step-header {
+.credit-card.active {
+  opacity: 1;
+  transform: rotateY(0deg) rotateX(0deg) scale(1);
+  z-index: 10;
+}
+
+.hdfc-card {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.icici-card {
+  background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+}
+
+.axis-card {
+  background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+}
+
+.sbi-card {
+  background: linear-gradient(135deg, #3742fa 0%, #2f3542 100%);
+}
+
+.amex-card {
+  background: linear-gradient(135deg, #2ed573 0%, #1e90ff 100%);
+}
+
+.card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  justify-content: space-between;
 }
 
-.step-icon {
+.bank-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.card-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.card-number {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-holder {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.card-network {
   font-size: 1.5rem;
 }
 
-.step-title {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.demo-content {
-  padding: 12px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-
-.offer-card, .match-card, .virtual-card {
+.card-indicators {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
-.offer-card span:first-child,
-.match-card span:first-child,
-.virtual-card span:first-child {
-  font-weight: 600;
-  color: var(--text-primary);
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.3);
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.offer-card span:last-child,
-.match-card span:last-child,
-.virtual-card span:last-child {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+.indicator.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Card Animation */
+@keyframes cardRotate {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) rotateX(10deg) scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotateY(-45deg) rotateX(5deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) rotateX(0deg) scale(1);
+  }
+}
+
+.credit-card.entering {
+  animation: cardRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Trust Logos Styles */
